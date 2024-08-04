@@ -1,0 +1,21 @@
+.input {
+  display: flex;
+  align-items: center;
+}
+
+.input.textarea {
+  align-items: flex-start;
+}
+
+.input .label {
+  flex: var(--left-col-flex);
+  font-size: var(--default-label-size);
+  text-transform: capitalize;
+}
+
+.input .input-element {
+  border: var(--default-border);
+  border-radius: var(--default-border-radius);
+  flex: var(--right-col-flex);
+  padding: var(--default-input-padding);
+}

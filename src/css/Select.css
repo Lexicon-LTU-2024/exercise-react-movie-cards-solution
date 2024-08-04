@@ -1,0 +1,22 @@
+.select {
+  display: flex;
+  align-items: center;
+}
+
+.select .label {
+  font-size: var(--default-label-size);
+  flex: var(--left-col-flex);
+  text-transform: capitalize;
+}
+
+.select .select-element {
+  border: var(--default-border);
+  border-radius: var(--default-border-radius);
+  flex: var(--right-col-flex);
+  padding: var(--default-input-padding);
+  text-transform: capitalize;
+}
+
+.select .select-element option {
+  text-transform: capitalize;
+}

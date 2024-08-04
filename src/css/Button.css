@@ -1,0 +1,9 @@
+.button {
+  background-color: transparent;
+  border: var(--default-border);
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  padding: 0.5rem 1rem;
+  text-transform: capitalize;
+}

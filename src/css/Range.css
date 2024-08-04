@@ -1,0 +1,16 @@
+.range {
+  display: flex;
+  align-items: center;
+}
+
+.range .label {
+  flex: var(--left-col-flex);
+  font-size: var(--default-label-size);
+  text-transform: capitalize;
+}
+
+.range .range-container {
+  display: flex;
+  gap: 1rem;
+  flex: var(--right-col-flex);
+}
