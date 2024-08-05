@@ -27,32 +27,32 @@ export const moviesFromData: IMovie[] = [
 export const options: IOption[] = [
   {
     id: "1",
-    label: "horror",
-    value: "horror",
+    label: "Horror",
+    value: "Horror",
   },
   {
     id: "2",
-    label: "fantasy",
-    value: "fantasy",
+    label: "Fantasy",
+    value: "Fantasy",
   },
   {
     id: "3",
-    label: "drama",
-    value: "drama",
+    label: "Drama",
+    value: "Drama",
   },
   {
     id: "4",
-    label: "comedy",
-    value: "comedy",
+    label: "Comedy",
+    value: "Comedy",
   },
   {
     id: "5",
-    label: "science fiction",
-    value: "science fiction",
+    label: "Science fiction",
+    value: "Science fiction",
   },
   {
     id: "6",
-    label: "history",
-    value: "history",
+    label: "History",
+    value: "History",
   },
 ];

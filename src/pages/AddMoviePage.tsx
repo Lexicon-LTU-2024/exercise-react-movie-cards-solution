@@ -1,17 +1,17 @@
 import { FormEventHandler, MouseEventHandler, ReactElement, useState } from "react";
-import { IMovie } from "../interfaces";
-import { Button, Input, Range, Select } from ".";
+import { useNavigate, useOutletContext } from "react-router-dom";
+
 import { options } from "../data";
+import { IMovie, IMovieContext } from "../interfaces";
+import { Input, Select, Button, Range } from "../components";
 
-interface IAddMovieProps {
-  addMovie: (movie: IMovie) => void;
-}
-
-export function AddMovie({ addMovie }: IAddMovieProps): ReactElement {
+export function AddMoviePage(): ReactElement {
   const [title, setTitle] = useState<string>("");
   const [rating, setRating] = useState<string>("3");
   const [genre, setGenre] = useState<string>("");
   const [description, setDescription] = useState<string>("");
+  const { addMovie } = useOutletContext<IMovieContext>();
+  const navigate = useNavigate();
 
   const handleOnsubmit: FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault();
@@ -24,15 +24,18 @@ export function AddMovie({ addMovie }: IAddMovieProps): ReactElement {
     };
 
     addMovie(newMovie);
-
-    console.log(newMovie);
+    navigate("/");
   };
 
-  const handleOnClearClick: MouseEventHandler<HTMLButtonElement> = () => {
+  const handleOnClearClick = () => {
     setTitle("");
     setRating("3");
-    setGenre("horror");
+    setGenre("");
     setDescription("");
+  };
+
+  const handleOnBackClick = () => {
+    navigate("/");
   };
 
   return (
@@ -64,6 +67,7 @@ export function AddMovie({ addMovie }: IAddMovieProps): ReactElement {
       <div className="actions">
         <div className="empty-space"></div>
         <div className="action-buttons">
+          <Button label="Back" onClick={handleOnBackClick} type="button" />
           <Button label="clear" onClick={handleOnClearClick} type="button" />
           <Button label="add" type="submit" />
         </div>

@@ -16,7 +16,3 @@
   padding: var(--default-input-padding);
   text-transform: capitalize;
 }
-
-.select .select-element option {
-  text-transform: capitalize;
-}
