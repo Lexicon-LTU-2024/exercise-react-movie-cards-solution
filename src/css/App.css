@@ -1,5 +1,6 @@
 @import url("./AddMoviePage.css");
 @import url("./Button.css");
+@import url("./Header.css");
 @import url("./Input.css");
 @import url("./MovieCard.css");
 @import url("./MovieListPage.css");
@@ -20,12 +21,12 @@ html {
   --right-col-flex: 3;
 }
 
-body {
-  margin: 1rem;
-}
-
 #root {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+body {
+  padding-top: 120px;
 }

@@ -1,9 +1,10 @@
 import { ReactElement, useState } from "react";
 import { moviesFromData } from "../data";
 import { IMovie } from "../interfaces";
+import { AddMoviePage, MovieListPage } from "../pages";
+import { Header } from ".";
 
 import "../css/App.css";
-import { AddMoviePage, MovieListPage } from "../pages";
 
 export function App(): ReactElement {
   const [movies, setMovies] = useState<IMovie[]>(moviesFromData);
@@ -18,6 +19,7 @@ export function App(): ReactElement {
 
   return (
     <>
+      <Header />
       <AddMoviePage addMovie={addMovie} />
       <MovieListPage movies={movies} onMovieClick={handleOnMovieClick} />
     </>
