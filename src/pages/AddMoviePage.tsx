@@ -2,7 +2,7 @@ import { FormEventHandler, MouseEventHandler, ReactElement, useState } from "rea
 import { IMovie, IMovieContext } from "../interfaces";
 import { Button, Input, Range, Select } from "../components";
 import { options } from "../data";
-import { useOutletContext } from "react-router-dom";
+import { useNavigate, useOutletContext } from "react-router-dom";
 
 export function AddMoviePage(): ReactElement {
   const [title, setTitle] = useState<string>("");
@@ -10,6 +10,7 @@ export function AddMoviePage(): ReactElement {
   const [genre, setGenre] = useState<string>("");
   const [description, setDescription] = useState<string>("");
   const { addMovie } = useOutletContext<IMovieContext>();
+  const navigate = useNavigate();
 
   const handleOnsubmit: FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault();
@@ -22,6 +23,7 @@ export function AddMoviePage(): ReactElement {
     };
 
     addMovie(newMovie);
+    navigate("/");
 
     console.log(newMovie);
   };
