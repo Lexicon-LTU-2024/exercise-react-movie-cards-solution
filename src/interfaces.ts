@@ -5,6 +5,12 @@ export interface IMovie {
   description: string;
 }
 
+export interface IMovieContext {
+  movies: IMovie[];
+  addMovie: (movie: IMovie) => void;
+  handleOnMovieClick: (movie: IMovie) => void;
+}
+
 export interface IOption {
   id: string;
   label: string;

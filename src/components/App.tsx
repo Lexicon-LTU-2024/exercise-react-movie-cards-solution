@@ -1,7 +1,7 @@
 import { ReactElement, useState } from "react";
+import { Outlet } from "react-router-dom";
 import { moviesFromData } from "../data";
-import { IMovie } from "../interfaces";
-import { AddMoviePage, MovieListPage } from "../pages";
+import { IMovie, IMovieContext } from "../interfaces";
 import { Header } from ".";
 
 import "../css/App.css";
@@ -17,11 +17,16 @@ export function App(): ReactElement {
     setMovies(movies.filter((m) => m !== movie));
   };
 
+  const movieContext: IMovieContext = {
+    movies,
+    addMovie,
+    handleOnMovieClick,
+  };
+
   return (
     <>
       <Header />
-      <AddMoviePage addMovie={addMovie} />
-      <MovieListPage movies={movies} onMovieClick={handleOnMovieClick} />
+      <Outlet context={movieContext} />
     </>
   );
 }
