@@ -1,10 +1,9 @@
 import { ReactElement } from "react";
 import { MovieCard } from "../components";
-import { useOutletContext } from "react-router-dom";
-import { IMovieContext } from "../interfaces";
+import { useMovieContext } from "../hooks";
 
 export function MovieListPage(): ReactElement {
-  const { movies } = useOutletContext<IMovieContext>();
+  const { movies } = useMovieContext();
 
   return (
     <section className="movie-list">

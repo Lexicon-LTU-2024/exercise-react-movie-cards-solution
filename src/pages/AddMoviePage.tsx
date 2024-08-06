@@ -1,15 +1,16 @@
 import { FormEventHandler, MouseEventHandler, ReactElement, useState } from "react";
-import { IMovie, IMovieContext } from "../interfaces";
+import { IMovie } from "../interfaces";
 import { Button, Input, Range, Select } from "../components";
 import { options } from "../data";
-import { useNavigate, useOutletContext } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { useMovieContext } from "../hooks";
 
 export function AddMoviePage(): ReactElement {
   const [title, setTitle] = useState<string>("");
   const [rating, setRating] = useState<string>("3");
   const [genre, setGenre] = useState<string>("");
   const [description, setDescription] = useState<string>("");
-  const { addMovie } = useOutletContext<IMovieContext>();
+  const { addMovie } = useMovieContext();
   const navigate = useNavigate();
 
   const handleOnsubmit: FormEventHandler<HTMLFormElement> = (e) => {
