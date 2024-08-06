@@ -1,5 +1,5 @@
 import { ReactElement } from "react";
-import { MovieCard } from ".";
+import { MovieCard } from "../components";
 import { IMovie } from "../interfaces";
 
 interface IMovieListProps {
@@ -7,7 +7,7 @@ interface IMovieListProps {
   onMovieClick: (movie: IMovie) => void;
 }
 
-export function MovieList({ movies, onMovieClick }: IMovieListProps): ReactElement {
+export function MovieListPage({ movies, onMovieClick }: IMovieListProps): ReactElement {
   return (
     <section className="movie-list">
       {movies.map((m) => (

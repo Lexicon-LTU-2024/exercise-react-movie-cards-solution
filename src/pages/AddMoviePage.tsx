@@ -1,13 +1,13 @@
 import { FormEventHandler, MouseEventHandler, ReactElement, useState } from "react";
 import { IMovie } from "../interfaces";
-import { Button, Input, Range, Select } from ".";
+import { Button, Input, Range, Select } from "../components";
 import { options } from "../data";
 
 interface IAddMovieProps {
   addMovie: (movie: IMovie) => void;
 }
 
-export function AddMovie({ addMovie }: IAddMovieProps): ReactElement {
+export function AddMoviePage({ addMovie }: IAddMovieProps): ReactElement {
   const [title, setTitle] = useState<string>("");
   const [rating, setRating] = useState<string>("3");
   const [genre, setGenre] = useState<string>("");
