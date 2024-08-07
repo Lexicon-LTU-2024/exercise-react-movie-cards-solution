@@ -1,3 +1,9 @@
+# Solution example for Movie Cards.
+
+This solution comes with three branches. The first one: the _main_ branch is the original solution branch. The _router-version_ is the branch I used to prepare the addition of React Router to the solution. The third one _router-version-code-along_ is the branch I coded together with you, which means it has a richer commit history is you would like to follow the steps more closely.
+
+Below is the original exercise description.
+
 # Movie Cards
 
 You are going to create a webpage where you can add movie cards. This will be done through a form, where the user can type in a title, rating, genre and a description.
